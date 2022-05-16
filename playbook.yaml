@@ -1,0 +1,24 @@
+- name: Collect info about all VMs
+  hosts: all
+  tasks:
+    - setup:
+- name: Docker
+  become: yes
+  hosts: app_servers
+  roles:
+    - docker
+- name: Nginx
+  hosts: app_servers
+  become: yes
+  roles:
+    - nginx
+- name: OpenMRS
+  hosts: app_servers
+  become: yes
+  roles:  
+    - app
+- name: Users
+  hosts: app_servers
+  become: yes
+  roles:  
+    - admin_users

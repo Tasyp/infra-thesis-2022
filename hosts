@@ -1,0 +1,4 @@
+app-1 ansible_host=X ansible_port=10822 ansible_ssh_user=ubuntu ansible_python_interpreter=python3
+
+[app_servers]
+app-1

@@ -1,0 +1,7 @@
+mysql_host: mysql-host
+mysql_database: database-name
+mysql_user: database-user
+mysql_password: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          PASSWORD-HASH
+app_port: 8080

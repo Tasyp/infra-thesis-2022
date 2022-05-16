@@ -1,0 +1,17 @@
+- name: OpenMRS
+  docker_container:
+    name: openmrs
+    image: openmrs/openmrs-distro-platform:2.1.5
+    state: present
+    recreate: yes
+    exposed_ports:
+      - "8080:{{ app_port }}"
+    env:
+      DB_DATABASE: "{{ mysql_database }}"
+      DB_HOST: "{{ mysql_host }}"
+      DB_USERNAME: "{{ mysql_user }}"
+      DB_PASSWORD: "{{ mysql_password }}"
+      DB_CREATE_TABLES: 'true'
+      DB_AUTO_UPDATE: 'true'
+      MODULE_WEB_ADMIN: 'true'
+
